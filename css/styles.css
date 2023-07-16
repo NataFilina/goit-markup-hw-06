@@ -59,7 +59,7 @@ img {
 
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 736px;
+        max-width: 768px;
     }
 }
 
@@ -131,21 +131,12 @@ img {
 
 @media screen and (min-width: 768px) {
     .header-container{
-       
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 }
 
-/* Desk screen */
-
-@media screen and (min-width: 1158px) {
-    .header-container{
-        display: flex;
-        justify-content: space-between;
-        padding: 24px 0;
-    }
-}
 .header-logo-navigation {
     display: flex;
     justify-content: space-between;
@@ -209,6 +200,7 @@ img {
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     padding: 24px 0;
+    display: block;
 }
 .header-navigation-item-link:hover,
 .header-navigation-item-link:focus,
@@ -221,7 +213,7 @@ img {
 .header-studio-page::after {
     position: absolute;
     left: 0;
-    bottom: 6px; 
+    bottom: -1px; 
 
     content: "";
     width: 48px;
@@ -230,13 +222,7 @@ img {
     margin-top: 20px;
     border-radius: 2px; 
 }
-/* Desk screen */
 
-@media screen and (min-width: 1158px) {
-    .header-studio-page::after {
-        bottom: -4px;
-    }
-}
 .header-contacts-box {
     display: none;
 }
@@ -346,8 +332,8 @@ img {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        padding-top: 188px;
-        padding-bottom: 188px;
+        padding-top: 112px;
+        padding-bottom: 112px;
     }
     /* Retina*/
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -359,7 +345,13 @@ img {
       }
     }
 }
-
+/* Desk screen */
+@media only screen and (min-width: 1158px) {
+    .hero {
+        padding-top: 188px;
+        padding-bottom: 188px;
+    }
+}
 .hero-title {
     color: #FFF;
     text-align: center;
@@ -438,15 +430,11 @@ img {
 @media screen and (min-width: 768px) {
     .advantages-items {
         flex-direction: row;
-        gap: 24px;        
+        gap: 72px 24px;        
         flex-wrap: wrap;
     }
 }
-@media screen and (min-width: 428px) and (max-width: 768px) {
-    /* .advantages-card:not(:last-child) {
-        margin-bottom: 72px;
-    } */
-}
+
 
 /* Tablet screen */
 @media screen and (min-width: 768px) {
@@ -557,11 +545,19 @@ img {
         padding: 120px 0;
     }
 }
-
+.team-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;        
+    align-items: center;
+    /* flex-wrap: wrap;
+    justify-content: center; */
+}
 /* Tablet screen */
 @media only screen and (min-width: 768px){
     .team-cards {
         display: flex;
+        flex-direction: row;
         gap: 64px 24px;        
         flex-wrap: wrap;
         justify-content: center;
@@ -582,15 +578,6 @@ img {
     /* margin: 0 auto;   */
 }
 
-/* Mob screen */
-@media only screen and (min-width: 320px) and (max-width: 767px) {
-    .team-item:not(:last-child) {
-        margin-bottom: 72px;
-    } 
-    .team-item {
-        width: 264px;
-    }
-}
 /* Tablet screen */
 @media only screen and (min-width: 768px) {
     .team-item {
@@ -683,13 +670,13 @@ img {
 .costomers-wrap {
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 72px 16px;
     flex-wrap: wrap;
 }
 /* Tablet screen */
 @media only screen and (min-width: 768px){
     .costomers-wrap {
-        gap: 24px;
+        gap: 72px 24px;
     }
 }
 .costomers-box-icons {
@@ -778,7 +765,7 @@ img {
 }
 
 /* Tablet screen */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 1158px)  {
     .footer-part-one {
         margin-right: 24px;
         margin-bottom: 72px;
@@ -1024,7 +1011,7 @@ img {
 }
 @media only screen and (min-width: 428px) {
     .modal {
-        width: 408px;
+        width: 392px;
     }
 }
 /* Tablet screen */
@@ -1363,7 +1350,7 @@ img {
 
     padding: 0;
     background-color: transparent;
-    border: 1px solid rgba(46, 47, 66, 0.3);
+    border: none;
     outline: none;
     
 }
@@ -1437,6 +1424,11 @@ img {
     text-transform: capitalize;
     display: block;
     margin-bottom: 40px;
+}
+@media only screen and (min-width: 428px) {
+    .mobile-contacts-item-tel {
+        font-size: 36px;
+    }
 }
 .mobile-contacts-item-mail {
     color:#434455;
